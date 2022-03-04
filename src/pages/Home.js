@@ -6,6 +6,7 @@ import {ScrollView, TextInput} from 'react-native-gesture-handler';
 import {useNavigation} from '@react-navigation/native';
 
 import New from '../components/New';
+import House from '../components/House';
 
 export default function Home() {
   const natigation = useNavigation();
@@ -47,6 +48,20 @@ export default function Home() {
           description="Casa nova uma quadra do mar, lugra seguro e monitorado 24horas"
           onPress={() => {}}
         />
+      </ScrollView>
+
+      <View
+        style={{flexDirection: 'row', marginBottom: 10, alignItems: 'center'}}>
+        <Text style={[styles.title, {marginTop: 20}]}>Próximo de você</Text>
+      </View>
+
+      <ScrollView
+        horizontal
+        showsVerticalScrollIndicator={false}
+        style={{paddingHorizontal: 15}}>
+        <House cover={require('../assets/house4.jpg')} />
+        <House cover={require('../assets/house5.jpg')} />
+        <House cover={require('../assets/house6.jpg')} />
       </ScrollView>
     </ScrollView>
   );
