@@ -3,10 +3,13 @@ import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
 import {Icon} from 'react-native-elements';
 import {ScrollView, TextInput} from 'react-native-gesture-handler';
+import {useNavigation} from '@react-navigation/native';
 
 import New from '../components/New';
 
 export default function Home() {
+  const natigation = useNavigation();
+
   return (
     <ScrollView
       showsVerticalScrollIndicator={false}
@@ -30,7 +33,7 @@ export default function Home() {
           cover={require('../assets/house1.jpg')}
           name="Casa de Praia"
           description="Casa nova uma quadra do mar, lugra seguro e monitorado 24horas"
-          onPress={() => {}}
+          onPress={() => natigation.navigate('Detail')}
         />
         <New
           cover={require('../assets/house2.jpg')}
